@@ -12,14 +12,16 @@
             <input type="number" name="panjang"><br>
             Masukan Lebar : <br>
             <input type="number" name="lebar"><br>
+            Masukan Jari-Jari : <br>
+            <input type="number" name="jari"><br>
             <input type="submit" value="Hasil"><br>
         </form>
-
 
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $p = $_POST["panjang"];
             $l = $_POST["lebar"];
+            $r = $_POST["jari"];
                 function persegi_panjang($p, $l){
                     return $p * $l;
                 }
@@ -27,9 +29,10 @@
                     return 3.14 * $r * $r;
                 }
                 echo "Luas Persegi Panjang = ". persegi_panjang($p, $l). "</br>";
-                echo "Luas Lingkaran = ". lingkaran(10). "</br>";
+                echo "Luas Lingkaran = ". lingkaran($r). "</br>";
     }
         ?>
+        
     </body>
     </html>
 </html>
