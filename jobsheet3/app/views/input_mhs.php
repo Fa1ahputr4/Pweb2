@@ -1,3 +1,4 @@
+
 <h3>Tambah Data Mahasiswa</h3>
 <form action="proses_mhs.php?aksi=tambah" method="post">
     <table>
@@ -17,7 +18,7 @@
         </tr>
         <tr>
             <td></td>
-            <td><input type="button" value="simpan"></td>
+            <td><input type="submit" value="Simpan" class="btn btn-success"></td>
         </tr>
     </table>
 </form> 

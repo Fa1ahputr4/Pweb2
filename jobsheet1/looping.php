@@ -20,31 +20,26 @@
      }
 
      echo "Perulangan DO WHILE bilangan prima dari 1 hingga 20 </br>";
-     $z = 1;
 
-do {
-    $prima = true;
+     $n = 2; // Mulai dari 2 karena 1 bukan bilangan prima
 
-    if ($z <= 1) {
-        $prima = false;
-    } elseif ($z <= 3) {
-        $prima = true;
-    } elseif ($z % 2 == 0) {
-        $prima = false;
-    } else {
-        for ($i = 3; $i <= sqrt($z); $i += 2) {
-            if ($z % $i == 0) {
-                $prima = false;
-                break;
-            }
-        }
-    }
-
-    if ($prima) {
-        echo "$z </br>";
-    }
-    $z++;
-} while ($z <= 20);
+     do {
+         $prima = true;
+     
+         for ($i = 2; $i < $n; $i++) {
+             if ($n % $i === 0) {
+                 $prima = false;
+                 break;
+             }
+         }
+     
+         if ($prima) {
+             echo $n . " <br>";
+         }
+     
+         $n++;
+     } while ($n < 20);
+     
 
 
     ?>

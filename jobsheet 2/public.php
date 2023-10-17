@@ -11,7 +11,6 @@ class mahasiswa{
         return "Nama Saya Falah <br>";
     }
 
-    //protected method
     function tampilkan_nim(){
         return "NIM saya ". $this->nim;
     }

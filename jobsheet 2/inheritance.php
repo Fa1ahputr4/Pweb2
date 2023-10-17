@@ -3,7 +3,7 @@
 class manusia {
     public $nama_saya;
     private $usia = "19 tahun";
-    protected $jenis_kelamin;
+    protected $jenis_kelamin = "Laki-Laki";
 
     //membuat method panggil nama
     function panggil_nama($saya){
@@ -17,7 +17,7 @@ class manusia {
 
     //method untuk memanggil jenis_kelamin
     function jk(){
-        return "Jenis kelamin saya adalah : Laki-Laki ";
+        return "Jenis kelamin saya adalah : ". $this->jenis_kelamin;
     }
 }
 
