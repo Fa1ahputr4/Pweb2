@@ -21,16 +21,17 @@
 
      echo "Perulangan DO WHILE bilangan prima dari 1 hingga 20 </br>";
 
-     $n = 2; // Mulai dari 2 karena 1 bukan bilangan prima
+     $n=2; // Mulai dari 2 karena 1 bukan bilangan prima
 
      do {
          $prima = true;
      
          for ($i = 2; $i < $n; $i++) {
-             if ($n % $i === 0) {
+             if ($n % $i == 0) {
                  $prima = false;
                  break;
              }
+             
          }
      
          if ($prima) {

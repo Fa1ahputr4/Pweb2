@@ -40,5 +40,5 @@ $informatika->jk();
 echo "Nama Depan Saya : ". $informatika->nama_saya. "<br>";
 echo "Nama Belakang Saya : ". $informatika->nama_mahasiswa. "<br>";
 echo $informatika->usia(). "<br>";
-echo $informatika->jk();
+echo $informatika->jk() . "<br>";
 ?>

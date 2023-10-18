@@ -1,16 +1,36 @@
 <?php
+include '../../public/bootstrap.php';
 include '../classes/databases.php';
 $db=new database();
 ?>
 
+<div class="px-3 py-3">
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="navbar.php">SIAKAD</a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="tampil_dosen.php">Dosen</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="tampil_mhs.php">Mahasiswa</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="px-4 py-3">
 <h3>Edit Data Mahasiswa</h3>
+<div class="card px-3 py-3" style="width: 30%;">
 <form action="proses_mhs.php?aksi=update" method="post">
     <?php
     foreach($db->edit($_GET['nim']) as $d){
     ?>
-    <table>
+    <table class="table table-borderless">
         <tr>
-            <td>NIM</td>
+            <td>NIPD</td>
             <td><input type="text" name="nim" value="<?php echo $d['nim']?>"></td>
         </tr>
         <tr>
@@ -25,10 +45,12 @@ $db=new database();
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" value="simpan"></td>
+            <td><input type="submit" value="simpan" class="btn btn-success"></td>
         </tr>
     </table>
     <?php
     }
     ?>
 </form> 
+</div>
+</div>

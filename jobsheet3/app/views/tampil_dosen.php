@@ -1,15 +1,13 @@
 <?php
-include '../../public/navbar.php';
+include '../../public/bootstrap.php';
 include '../classes/databases.php';
 $db=new database;
 ?>
-<div class="px-3 py-0">
-<nav class="navbar navbar-expand-lg bg-body-secondary">
+
+<div class="px-3 py-3">
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
   <div class="container-fluid">
     <a class="navbar-brand" href="navbar.php">SIAKAD</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -24,7 +22,28 @@ $db=new database;
 </nav>
 
 <h3>Data Dosen</h3>
-<a href="input_dsn.php" class="btn btn-primary">Tambah Dosen</a>
+<a href="input_dsn.php" class="btn btn-primary mb-3">Tambah Dosen</a>
+
+<?php
+if (isset($_GET['status']) && $_GET['status'] == "tambah") {
+    // Tampilkan alert jika status adalah "success"
+    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        Data mahasiswa berhasil ditambahkan!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
+}elseif (isset($_GET['status']) && $_GET['status'] == "edit"){
+  echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  Data berhasil diubah!
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+}elseif (isset($_GET['status']) && $_GET['status'] == "hapus"){
+  echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  Data telah dihapus!
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+}
+?>
+
 <table border="1" class="table table-bordered">
     <tr class="table-secondary">
         <th>No</th>
